@@ -1,4 +1,4 @@
-const fs = require("fs/promises");
+const fs = require("fs").promises;
 const path = require("path");
 const { nanoid } = require("nanoid");
 
@@ -28,9 +28,6 @@ const listContacts = async()=> {
     const [removedContacts] = contacts.splice(idx, 1);
     await fs.writeFile(contactsPath, JSON.stringify(contacts));
     return removedContacts;
-    // const newСontacts = contacts.filter((_, index) => index !== idx);
-    // updateProducts(newСontacts);
-    // return contacts[idx];
   };
   
   const addContact = async(data)=> {
